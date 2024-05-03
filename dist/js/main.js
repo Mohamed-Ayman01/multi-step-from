@@ -33,10 +33,7 @@ let totalPrice = document.querySelector(".step[data-index='4'] .total .amount");
 let totalPlanTime = document.querySelector(".step[data-index='4'] .total p");
 
 function updatePrice(totalEl) {
-  console.log("updated")
   let accum = 0;
-
-  console.log(parseInt(planPriceInBill.textContent.slice(1)))
 
   accum += Number.parseInt(planPriceInBill.textContent.slice(1));
 
@@ -114,11 +111,21 @@ previousStepBtns.forEach((btn) => {
 });
 
 planTypeToggle.addEventListener("click", (e) => {
+  let addonPrices = document.querySelectorAll(
+    ".step[data-index='4'] .cart .addon .price",
+  );
+
+  console.log(addonPrices)
+
   if (e.target.checked) {
     planTypeToggle.setAttribute("data-type", "yearly");
 
     planTimeInBill.textContent = "(Yearly)";
     totalPlanTime.textContent = "Total (per year)";
+
+    addonPrices.forEach(priceEl => {
+      priceEl.textContent = priceEl.getAttribute("data-yearly")
+    })
 
     toggleablePrices.forEach((el) => {
       el.textContent = el.getAttribute("data-yearly");
@@ -139,6 +146,10 @@ planTypeToggle.addEventListener("click", (e) => {
     toggleablePrices.forEach((el) => {
       el.textContent = el.getAttribute("data-monthly");
     });
+
+    addonPrices.forEach(priceEl => {
+      priceEl.textContent = priceEl.getAttribute("data-monthly")
+    })
 
     planBoxesDiscounts.forEach((el) => {
       el.classList.add("hidden");
@@ -252,7 +263,6 @@ addonCheckboxes.forEach((el) => {
     if (el.classList.contains("checked")) {
       billAddons.forEach(addon => {
         if (addon.getAttribute("data-id") == el.getAttribute("for")) {
-          console.log(addon.getAttribute("data-id"))
           addon.classList.add("active")
           addon.classList.remove("hidden")
         }
