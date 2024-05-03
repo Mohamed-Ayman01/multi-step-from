@@ -1,0 +1,502 @@
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox] + label .img-box, .container .sidebar .step .index, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  background-color: hsl(217, 100%, 97%);
+}
+@media (width <= 490px) {
+  body {
+    min-height: auto;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 70%;
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  border-radius: 12px;
+}
+@media (width <= 920px) {
+  .container {
+    gap: 0;
+    width: 95%;
+  }
+}
+@media (width <= 490px) {
+  .container {
+    width: 100%;
+    height: 100% !important;
+    padding: 0;
+    padding-bottom: 8.5rem;
+    flex-direction: column;
+    background-color: hsl(217, 100%, 97%);
+    position: relative;
+  }
+}
+.container .sidebar {
+  flex-basis: 28%;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 8px;
+  color: white;
+  background-image: url("../../dist/assets/images/bg-sidebar-desktop.svg");
+  background-size: cover;
+  background-position: center;
+}
+@media (width <= 490px) {
+  .container .sidebar {
+    flex-direction: row;
+    justify-content: center;
+    background-position: 0px -44%;
+    padding: 0;
+    padding-bottom: 7rem;
+    padding-top: 2rem;
+    border-radius: 0;
+  }
+}
+.container .sidebar .step {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+@media (width <= 490px) {
+  .container .sidebar .step .txt {
+    display: none;
+  }
+}
+.container .sidebar .step .index {
+  font-weight: bold;
+  font-size: 13px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid hsl(206, 94%, 87%);
+  transition: color 0.3s, background-color 0.3s;
+}
+.container .sidebar .step .index.active {
+  background-color: hsl(228, 100%, 84%);
+  color: hsl(213, 96%, 18%);
+}
+.container .sidebar .step .txt {
+  text-transform: uppercase;
+}
+.container .sidebar .step .txt p {
+  font-weight: 300;
+  color: hsl(229, 24%, 87%);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.container .sidebar .step .txt h3 {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+.container .steps {
+  flex: 1;
+  padding: 1rem 3rem;
+}
+@media (width <= 920px) {
+  .container .steps {
+    padding: 1.5rem;
+    flex: 1 1;
+  }
+}
+@media (width <= 490px) {
+  .container .steps {
+    padding: 0.8rem;
+  }
+}
+.container .steps .step {
+  display: none;
+  height: 100%;
+}
+.container .steps .step.active {
+  display: flex;
+  flex-direction: column;
+}
+@media (width <= 490px) {
+  .container .steps .step.active {
+    background-color: white;
+    margin-top: -6.5rem;
+    height: auto;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 10px;
+  }
+}
+.container .steps .step .heading {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.container .steps .step .heading h2 {
+  color: hsl(213, 96%, 18%);
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+.container .steps .step .heading p {
+  color: hsl(231, 11%, 63%);
+}
+.container .steps .step .navigate-controls {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+@media (width <= 490px) {
+  .container .steps .step .navigate-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1rem;
+  }
+}
+.container .steps .step .navigate-controls .next-step {
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+  font-weight: bold;
+  text-transform: capitalize;
+  border: 0;
+  padding: 0.8rem 1.4rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+.container .steps .step .navigate-controls .next-step:hover {
+  opacity: 0.95;
+}
+.container .steps .step .navigate-controls .previous-step {
+  text-transform: capitalize;
+  border: 0;
+  padding: 0.8rem 1.4rem;
+  font-size: 0.9rem;
+  background: none;
+  font-weight: bold;
+  color: hsl(231, 11%, 63%);
+  transition: color 0.3s;
+}
+.container .steps .step .navigate-controls .previous-step:hover {
+  color: hsl(213, 96%, 18%);
+}
+.container .steps .step[data-index="1"] form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 4.5rem;
+}
+@media (width <= 490px) {
+  .container .steps .step[data-index="1"] form {
+    margin-bottom: 0;
+  }
+}
+.container .steps .step[data-index="1"] form .box {
+  display: flex;
+  flex-direction: column;
+}
+.container .steps .step[data-index="1"] form .box label {
+  color: hsl(213, 96%, 18%);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.container .steps .step[data-index="1"] form .box label .warn {
+  color: hsl(354, 84%, 57%);
+  font-weight: bold;
+}
+.container .steps .step[data-index="1"] form .box input {
+  font-size: 0.9rem;
+  outline: none;
+  padding: 0.8rem 0.5rem;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 4px;
+  color: hsl(213, 96%, 18%);
+  font-weight: bold;
+  caret-color: hsl(213, 96%, 18%);
+}
+.container .steps .step[data-index="1"] form .box input:focus {
+  border-color: hsl(243, 100%, 62%);
+}
+.container .steps .step[data-index="1"] form .box input::placeholder {
+  color: hsl(231, 11%, 63%);
+}
+.container .steps .step[data-index="1"] form .box input.warn {
+  border: 1px solid hsl(354, 84%, 57%);
+}
+.container .steps .step[data-index="1"] .navigate-controls {
+  justify-content: flex-end;
+}
+.container .steps .step[data-index="2"] .select {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (width <= 490px) {
+  .container .steps .step[data-index="2"] .select {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.container .steps .step[data-index="2"] .select input[type=radio] {
+  display: none;
+}
+.container .steps .step[data-index="2"] .select input[type=radio] + label {
+  border: 1px solid hsl(229, 24%, 87%);
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: border 0.3s, background-color 0.3s;
+}
+@media (width <= 490px) {
+  .container .steps .step[data-index="2"] .select input[type=radio] + label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+.container .steps .step[data-index="2"] .select input[type=radio] + label:hover {
+  border: 1px solid hsl(243, 100%, 62%);
+}
+.container .steps .step[data-index="2"] .select input[type=radio] + label .img-box {
+  margin-bottom: 2.5rem;
+}
+@media (width <= 490px) {
+  .container .steps .step[data-index="2"] .select input[type=radio] + label .img-box {
+    margin: 0;
+  }
+}
+.container .steps .step[data-index="2"] .select input[type=radio] + label h4 {
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 0.5rem;
+}
+.container .steps .step[data-index="2"] .select input[type=radio] + label .price {
+  color: hsl(231, 11%, 63%);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.container .steps .step[data-index="2"] .select input[type=radio] + label .discount {
+  color: hsl(213, 96%, 18%);
+  font-size: 0.9rem;
+}
+.container .steps .step[data-index="2"] .select input[type=radio]:checked + label {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
+.container .steps .step[data-index="2"] .plan-type {
+  padding: 0.8rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: hsl(217, 100%, 97%);
+  margin-bottom: 7rem;
+  border-radius: 6px;
+}
+@media (width <= 490px) {
+  .container .steps .step[data-index="2"] .plan-type {
+    margin-bottom: 0;
+  }
+}
+.container .steps .step[data-index="2"] .plan-type > p {
+  color: hsl(231, 11%, 63%);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.container .steps .step[data-index="2"] .plan-type > p.active {
+  color: hsl(213, 96%, 18%);
+}
+.container .steps .step[data-index="2"] .plan-type input {
+  display: none;
+}
+.container .steps .step[data-index="2"] .plan-type input + label {
+  background-color: hsl(213, 96%, 18%);
+  height: 22px;
+  width: 45px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+.container .steps .step[data-index="2"] .plan-type input + label span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: white;
+  transition: left 0.3s;
+}
+.container .steps .step[data-index="2"] .plan-type input:checked + label span {
+  left: calc(100% - 20px);
+}
+.container .steps .step[data-index="3"] .checkboxes {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+@media (width <= 490px) {
+  .container .steps .step[data-index="3"] .checkboxes {
+    margin-bottom: 0;
+  }
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox] {
+  display: none;
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox] + label {
+  display: flex;
+  align-items: center;
+  border: 1px solid hsl(229, 24%, 87%);
+  padding: 1.2rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: border 0.3s, background-color 0.3s;
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox] + label:hover {
+  border: 1px solid hsl(243, 100%, 62%);
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox] + label .img-box {
+  padding: 0.1rem;
+  height: 20px;
+  width: 20px;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 3px;
+  margin-right: 1.8rem;
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox] + label .img-box img {
+  display: block;
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox] + label .text h4 {
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 0.3rem;
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox] + label .text p {
+  color: hsl(231, 11%, 63%);
+  font-size: 0.9rem;
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox] + label .price {
+  flex: 1 1;
+  text-align: end;
+  color: hsl(243, 100%, 62%);
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox]:checked + label {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
+.container .steps .step[data-index="3"] .checkboxes input[type=checkbox]:checked + label .img-box {
+  background-color: hsl(243, 100%, 62%);
+  border-color: hsl(243, 100%, 62%);
+}
+@media (width <= 490px) {
+  .container .steps .step[data-index="4"] {
+    padding-bottom: 0;
+  }
+}
+.container .steps .step[data-index="4"] .cart {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 8px;
+}
+.container .steps .step[data-index="4"] .cart .plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid hsl(229, 24%, 87%);
+  margin-bottom: 1.2rem;
+}
+.container .steps .step[data-index="4"] .cart .plan .plan-type {
+  color: hsl(213, 96%, 18%);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.container .steps .step[data-index="4"] .cart .plan .change-plan {
+  background: transparent;
+  border: none;
+  color: hsl(231, 11%, 63%);
+  font-size: 0.9rem;
+  text-decoration: 2px underline;
+  transition: color 0.3s;
+}
+.container .steps .step[data-index="4"] .cart .plan .change-plan:hover {
+  color: hsl(243, 100%, 62%);
+}
+.container .steps .step[data-index="4"] .cart .plan .price {
+  font-weight: bold;
+  color: hsl(213, 96%, 18%);
+}
+.container .steps .step[data-index="4"] .cart .addons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.container .steps .step[data-index="4"] .cart .addons .addon.active {
+  display: flex;
+  justify-content: space-between;
+}
+.container .steps .step[data-index="4"] .cart .addons .addon .type {
+  color: hsl(231, 11%, 63%);
+}
+.container .steps .step[data-index="4"] .cart .addons .addon .price {
+  color: hsl(213, 96%, 18%);
+  font-size: 0.9rem;
+}
+.container .steps .step[data-index="4"] .total {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+@media (width <= 490px) {
+  .container .steps .step[data-index="4"] .total {
+    margin-bottom: 0;
+  }
+}
+.container .steps .step[data-index="4"] .total p {
+  color: hsl(231, 11%, 63%);
+}
+.container .steps .step[data-index="4"] .total .amount {
+  color: hsl(243, 100%, 62%);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.container .steps .step[data-index="4"] .next-step {
+  background-color: hsl(243, 100%, 62%);
+}
+.container .steps .step[data-index="5"] {
+  padding: 4rem 0;
+  text-align: center;
+}
+.container .steps .step[data-index="5"] p {
+  max-width: 48ch;
+  line-height: 1.5;
+  margin: 0 auto;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <title>Frontend Mentor | Multi-step form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- js -->
+    <script src="./js/main.js" defer></script>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="sidebar">
+        <div class="step">
+          <div class="index active" data-value="1">1</div>
+          <div class="txt">
+            <p>step 1</p>
+            <h3>Your info</h3>
+          </div>
+        </div>
+        <div class="step">
+          <div class="index" data-value="2">2</div>
+          <div class="txt">
+            <p>step 2</p>
+            <h3>select plan</h3>
+          </div>
+        </div>
+        <div class="step">
+          <div class="index" data-value="3">3</div>
+          <div class="txt">
+            <p>step 3</p>
+            <h3>add-ons</h3>
+          </div>
+        </div>
+        <div class="step">
+          <div class="index" data-value="4">4</div>
+          <div class="txt">
+            <p>step 4</p>
+            <h3>summary</h3>
+          </div>
+        </div>
+      </div>
+      <div class="steps" data-current-index="1">
+        <div class="step" data-index="1">
+          <div class="heading">
+            <h2>Personal info</h2>
+            <p>Please provide your name, email address, and phone number.</p>
+          </div>
+          <form>
+            <div class="box">
+              <label for="name-input">Name</label>
+              <input type="text" id="name-input" placeholder="e.g. Stephen King">
+            </div>
+            <div class="box">
+              <label for="email-input">Email Address</label>
+              <input type="email" id="email-input" placeholder="e.g. stephenking@lorem.com">
+            </div>
+            <div class="box">
+              <label for="phone-input">Phone Number</label>
+              <input type="number" id="phone-input" placeholder="e.g. +1 234 567 890" min="0">
+            </div>
+          </form>
+          <div class="navigate-controls">
+            <button class="next-step">next step</button>
+          </div>
+        </div>
+        <div class="step" data-index="2">
+          <div class="heading">
+            <h2>Select your plan</h2>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+          <div class="select">
+            <input type="radio" name="plan" id="arcade-select" checked data-value="Arcade">
+            <label for="arcade-select">
+              <div class="img-box">
+                <img src="./assets/images/icon-arcade.svg" alt="">
+              </div>
+              <div>
+                <h4>Arcade</h4>
+                <p class="price toggleable-price" data-monthly="$9/mo" data-yearly="$90/yr">$9/mo</p>
+                <p class="discount hidden">2 months free</p>
+              </div>
+            </label>
+            <input type="radio" name="plan" id="advanced-select" data-value="Advanced">
+            <label for="advanced-select">
+              <div class="img-box">
+                <img src="./assets/images/icon-advanced.svg" alt="">
+              </div>
+              <div>
+                <h4>Advanced</h4>
+                <p class="price toggleable-price" data-monthly="$12/mo" data-yearly="$120/yr">$12/mo</p>
+                <p class="discount hidden">2 months free</p>
+              </div>
+            </label>
+            <input type="radio" name="plan" id="pro-select" data-value="Pro">
+            <label for="pro-select">
+              <div class="img-box">
+                <img src="./assets/images/icon-pro.svg" alt="">
+              </div>
+              <div>
+                <h4>Pro</h4>
+                <p class="price toggleable-price" data-monthly="$15/mo" data-yearly="$150/yr">$15/mo</p>
+                <p class="discount hidden">2 months free</p>
+              </div>
+            </label>
+          </div>
+          <div class="plan-type">
+            <p class="opt-1 active">Monthly</p>
+            <input type="checkbox" id="plan-type-switch" data-type="monthly">
+            <label for="plan-type-switch">
+              <span></span>
+            </label>
+            <p class="opt-2">Yearly</p>
+          </div>
+          <div class="navigate-controls">
+            <button class="previous-step">go back</button>
+            <button class="next-step">next step</button>
+          </div>
+        </div>
+        <div class="step" data-index="3">
+          <div class="heading">
+            <h2>Pick add-ons</h2>
+            <p>Add-ons help enhance your gaming experience.</p>
+          </div>
+          <div class="checkboxes">
+            <input type="checkbox" id="addons-checkbox-one">
+            <label for="addons-checkbox-one">
+              <div class="img-box">
+                <img src="./assets/images/icon-checkmark.svg" alt="">
+              </div>
+              <div class="text">
+                <h4>Online service</h4>
+                <p>Access to multiplayer games</p>
+              </div>
+              <p class="price toggleable-price" data-monthly="+$1/mo" data-yearly="+$10/yr">$1/mo</p>
+            </label>
+            <input type="checkbox" id="addons-checkbox-two">
+            <label for="addons-checkbox-two">
+              <div class="img-box">
+                <img src="./assets/images/icon-checkmark.svg" alt="">
+              </div>
+              <div class="text">
+                <h4>Larger storage</h4>
+                <p>Extra 1TB of cloud save</p>
+              </div>
+              <p class="price toggleable-price" data-monthly="+$2/mo" data-yearly="+$20/yr">$2/mo</p>
+            </label>
+            <input type="checkbox" id="addons-checkbox-three">
+            <label for="addons-checkbox-three">
+              <div class="img-box">
+                <img src="./assets/images/icon-checkmark.svg" alt="">
+              </div>
+              <div class="text">
+                <h4>Customizable Profile</h4>
+                <p>Custom theme on your profile</p>
+              </div>
+              <p class="price toggleable-price" data-monthly="+$2/mo" data-yearly="+$20/yr">$2/mo</p>
+            </label>
+          </div>
+          <div class="navigate-controls">
+            <button class="previous-step">go back</button>
+            <button class="next-step">next step</button>
+          </div>
+        </div>
+        <div class="step active" data-index="4">
+          <div class="heading">
+            <h2>Finishing up</h2>
+            <p>Double-check everything looks OK before confirming.</p>
+          </div>
+          <div class="cart">
+            <div class="plan">
+              <div class="info">
+                <div class="plan-type">
+                  <div class="type">Arcade</div> <div class="time">(Monthly)</div>
+                </div>
+                <button class="change-plan">
+                  Change
+                </button>
+              </div>
+              <div class="price toggleable-price" data-monthly="$9/mo" data-yearly="$90/yr">$9/mo</div>
+            </div>
+            <div class="addons">
+              <div class="addon hidden" data-id="addons-checkbox-one">
+                <div class="type">Online service</div>
+                <div class="price" data-monthly="+$1/mo" data-yearly="+$10/yr">+$1/mo</div>
+              </div>
+              <div class="addon hidden" data-id="addons-checkbox-two">
+                <div class="type">Larger storage</div>
+                <div class="price" data-monthly="+$2/mo" data-yearly="+$20/yr">+$2/mo</div>
+              </div>
+              <div class="addon hidden" data-id="addons-checkbox-three">
+                <div class="type">Customizable profile</div>
+                <div class="price" data-monthly="+$2/mo" data-yearly="+$20/yr">+$2/mo</div>
+              </div>
+            </div>
+          </div>
+          <div class="total">
+            <p>Total (per month)</p>
+            <div class="amount" data-monthly="$9/mo" data-monthly="$90/yr">+$9/mo</div>
+          </div>
+          <div class="navigate-controls">
+            <button class="previous-step">go back</button>
+            <button class="next-step">confirm</button>
+          </div>
+        </div>
+        <div class="step" data-index="5">
+          <div class="img-box">
+            <img src="./assets/images/icon-thank-you.svg" alt="">
+          </div>
+          <div class="heading">
+            <h2>Thank you!</h2>
+            <p>Thanks for confirming your subscription! We hope you have fun 
+              using our platform. If you ever need support, please feel free 
+              to email us at support@loremgaming.com.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </div> 
+    -->
+  </body>
+</html>
